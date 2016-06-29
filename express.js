@@ -11,6 +11,12 @@ app.get('/json', function (req, res) {
    	res.send(json);
 });
 
+app.get('/form',function(req, res){
+	var t = req.query.test;
+	console.log(req.route + " param:" + t);
+	res.send('<html><head></head><body><h1>'+t+'</h1></body></html>');
+});
+
 var server = app.listen(30000, function () {
 
   var host = server.address().address
