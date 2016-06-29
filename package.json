@@ -1,0 +1,28 @@
+{
+  "name": "mr-projekt",
+  "version": "0.0.0",
+  "description": "Das ist ein Beispiel",
+  "main": "express.js",
+  "scripts": {
+    "test": "node express.js",
+	"dependencies": {
+		"express": "4.14.0"
+	}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisKohl/MR-Projekt.git"
+  },
+  
+  "keywords": [
+    "Test",
+    "Regensburg",
+    "Node"
+  ],
+  "author": "Denis Kohl und andere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenisKohl/MR-Projekt/issues"
+  },
+  "homepage": "https://github.com/DenisKohl/MR-Projekt#readme"
+}
