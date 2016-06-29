@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="jquery/pro/jquery-3.0.0.min.js">
+</script>
+<script>
+	Daten = function(name, beruf, hobby){
+		this.name = name;
+		this.beruf = beruf;
+		this.hobby = hobby;
+	}
+	
+	$(document).ready(function(){
+		$('#knopf').click(function(){
+			var hobbys = ["Reiten","Angeln","Lesen"];
+			var d = new Daten("Ute", "Chef", hobbys);
+			var json = JSON.stringify(d); 
+			
+			$.ajax({
+				url:"http://localhost:30000/res",
+			    data: json,
+			    contentType: 'application/json',
+			    dataType: 'jsonp'
+			});
+			console.log(json);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="knopf" value="senden">
+	<div id="out">
+	</div>
+</body>
+</html>

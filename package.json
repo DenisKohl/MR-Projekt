@@ -7,13 +7,12 @@
     "test": "node express.js"
   },
   "dependencies": {
-  		"express": "4.14.0"
-  	},
+    "express": "4.14.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DenisKohl/MR-Projekt.git"
   },
-  
   "keywords": [
     "Test",
     "Regensburg",
@@ -24,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/DenisKohl/MR-Projekt/issues"
   },
-  "homepage": "https://github.com/DenisKohl/MR-Projekt#readme"
+  "homepage": "https://github.com/DenisKohl/MR-Projekt#readme",
+  "devDependencies": {
+    "line-by-line": "^0.1.4"
+  }
 }
