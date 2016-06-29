@@ -15,8 +15,18 @@
 			$('#geheim').show(100);
 		});
 		$('#senden').click(function(){
-			var in1 = $('#in1').val();
-			var in2 = $('#in2').val();
+			if($('#in1').val() == ""){
+				$('#in1').css('background','red');
+			}else{
+				var in1 = $('#in1').val();
+				$('#in1').css('background','white');
+			}
+			if($('#in2').val() == ""){
+				$('#in2').css('background','red');
+			}else{
+				var in2 = $('#in2').val();
+				$('#in2').css('background','white');
+			}
 			var d  = new Daten(in1, in2);
 			var jsonstr = JSON.stringify(d);
 			$('#json').html(jsonstr);
