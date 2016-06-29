@@ -23,9 +23,7 @@ module.exports = {
 		}else{
 			var array = line.split(";");
 			objarray.push( new dataline(array[0],array[1],array[2],array[3],array[4],array[5],array[6],array[7] ));
-			//console.log(line );
-			//console.log(array[0]+ " : " + objarray.length);
-			//console.log(objarray[objarray.length - 1]);
+			
 		}
 	});
 	lr.on('end', function () {

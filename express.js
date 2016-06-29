@@ -1,4 +1,5 @@
 var express = require('express');
+var imp = require("./readfile.js");
 require('./extern.js');
 var app = express();
 
@@ -20,6 +21,14 @@ app.get('/form',function(req, res){
 app.get('/res',function(req, res){
 	console.log("Empfange: " + req.body);
 	res.send('<html><head></head><body><h3>ergebnis</h3></body></html>');
+});
+app.get('/leistung', function(req, res){
+	imp.loadData(function( daten ){
+		console.log(daten);
+		res.set("Content-Type", "application/json");
+		res.send(daten);
+	});
+	
 });
 
 var server = app.listen(30000, function () {
