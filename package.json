@@ -4,11 +4,11 @@
   "description": "Das ist ein Beispiel",
   "main": "express.js",
   "scripts": {
-    "test": "node express.js",
-	"dependencies": {
-		"express": "4.14.0"
-	}
+    "test": "node express.js"
   },
+  "dependencies": {
+  		"express": "4.14.0"
+  	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DenisKohl/MR-Projekt.git"
