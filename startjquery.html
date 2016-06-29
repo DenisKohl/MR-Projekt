@@ -1,0 +1,54 @@
+<html>
+<head>
+	<script src="jquery/pro/jquery-3.0.0.min.js">
+	</script>
+	<script>
+	Daten = function(eins, zwei){
+		this.eins = eins;
+		this.zwei = zwei;
+	}
+	$(document).ready(function(){
+		$("#div1").html("Das hat geklappt.");
+		$(".class1").append("<br>Mit der classe geht es auch");
+		$('div').css('background','red');
+		$('#knopf').click(function(){
+			$('#geheim').show(100);
+		});
+		$('#senden').click(function(){
+			var in1 = $('#in1').val();
+			var in2 = $('#in2').val();
+			var d  = new Daten(in1, in2);
+			var jsonstr = JSON.stringify(d);
+			$('#json').html(jsonstr);
+			console.log(d);
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<form>
+		<input id="in1">
+		<input id="in2">
+		<input type=button value="sende" id="senden">
+	</form>	
+	<div id="div1">
+	</div>
+	<hr>
+	<div class="class1">
+		Class1
+	</div>
+	<hr>
+	<div class="class1">
+		Class2
+	</div>
+	<hr>
+	<div id="knopf">
+		<span class="class1">ich will nicht rot sein.</span>
+	</div>
+	<div id="geheim" style="display:none;">
+		Das ist geheim das darf keiner sehen.
+	</div>
+	<span id="json"></span>
+</body>
+</html>
