@@ -1,8 +1,13 @@
 <html>
 <head>
+	<link rel="stylesheet" href="./bower_components/chartist/dist/chartist.min.css">
+	
 	<script src="jquery/pro/jquery-3.0.0.min.js">
 	</script>
+	<script src="./bower_components/chartist/dist/chartist.min.js">
+	</script>
 	<script>
+	var daten = {labels: [],series:[]};
 	$(document).ready(function(){
 		$("#senden").click(function(){
 			$.ajax({
@@ -12,10 +17,30 @@
 				alert("trap1");
 				console.log( daten );
 				var zahle = 0;
-				for(var i = 0; i < daten.length; i++){
-					zahle++
+				var datum = [];
+				var values = [];
+				var scheinleistung = [];
+				var wirkleistung = [];
+				var options = {
+				width: 800,
+				height: 600,
+				scaleMinSpace: 10,
+				onlyInteger: true,
+				referenceValue: 20,
+					high:28,
+					low:0
+				};
+				for(var i = 0; i < 10; i++){
+					datum.push(daten[i].datum);
+					values.push(daten[i].umgebungstemp.replace(/,/,"."));
+					scheinleistung.push(daten[i].scheinleistung.replace(/,/,"."));
+					wirkleistung.push(daten[i].wirkleistung.replace(/,/,"."));
 				}
-				$('#ergo').html("<h2>"+ zahle +"</h2>")
+				var ser = [values,scheinleistung,wirkleistung];
+				daten.labels = datum;
+				daten.series = ser;
+				new Chartist.Line('.ct-chart', daten, options);
+				$('#ergo').html("<h2>"+ datum +"</h2>"+ "<h2>"+ values +"</h2>")
 			});
 			
 		});
@@ -27,6 +52,8 @@
 		<input type=button value="sende" id="senden">
 		<div id="ergo">
 			Test
+		</div>
+		<div class='ct-chart'>
 		</div>
 	
 </body>
