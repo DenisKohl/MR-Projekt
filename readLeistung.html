@@ -1,0 +1,33 @@
+<html>
+<head>
+	<script src="jquery/pro/jquery-3.0.0.min.js">
+	</script>
+	<script>
+	$(document).ready(function(){
+		$("#senden").click(function(){
+			$.ajax({
+				url: "http://127.0.0.1:30000/leistung",
+				dataType: "json"
+			}).done(function( daten ){
+				alert("trap1");
+				console.log( daten );
+				var zahle = 0;
+				for(var i = 0; i < daten.length; i++){
+					zahle++
+				}
+				$('#ergo').html("<h2>"+ zahle +"</h2>")
+			});
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	
+		<input type=button value="sende" id="senden">
+		<div id="ergo">
+			Test
+		</div>
+	
+</body>
+</html>
