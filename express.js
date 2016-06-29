@@ -23,7 +23,7 @@ app.get('/res',function(req, res){
 });
 
 var server = app.listen(30000, function () {
-	console.log(extern);
+  console.log(extern);
   var host = server.address().address
   var port = server.address().port
 

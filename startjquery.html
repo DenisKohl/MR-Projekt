@@ -14,6 +14,10 @@
 		$('#knopf').click(function(){
 			$('#geheim').show(100);
 		});
+		$('input').focusin(function(){
+			console.log(this);
+			$(this).css('background','white');
+		});
 		$('#senden').click(function(){
 			if($('#in1').val() == ""){
 				$('#in1').css('background','red');

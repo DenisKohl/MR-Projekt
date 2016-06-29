@@ -1,1 +1,1 @@
-extern = "ich komm aus dem Wald."
+GLOBAL.extern = "ich komm aus dem Wald."
