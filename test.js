@@ -1,3 +1,4 @@
 var imp = require("./readfile.js");
-var ergo = imp.loadData();
-console.log(ergo);
+imp.loadData(function( daten ){
+	console.log(daten);
+});
